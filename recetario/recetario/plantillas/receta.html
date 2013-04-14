@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% comment %} Aqui van comentarios {% endcomment %}
+
+{% block titulo %}{{ receta.titulo }}{% endblock %}
+
+{% block encabezado %}
+    <h1>{{ receta.titulo|title }}</h1>
+{% endblock %}
+{% block contenido %}
+      <div id="ingredientes">
+          <h2>Ingredientes</h2>
+          <p>{{ receta.ingredientes|striptags }}</p>
+      </div>
+      <div id="preparacion">
+          <h2>Preparacion</h2>
+          <p>{{ receta.preparacion|striptags }}</p>
+      </div>
+      <div id="referencia">
+         <img src="{{ MEDIA_URL }}{{ receta.imagen }}">
+      </div>
+      <div id="comentarios">
+          <h2>Comentarios</h2>
+          {% for item in comentarios%}
+            <p>{{ item.texto|striptags }}</p>
+          {% empty %}
+              <p>sin comentarios registrados</p>
+          {% endfor %}
+       </div>
+        <footer>
+            <p>Registrado {{ receta.tiempo_registro|date:'SHORT_DATETIME_FORMAT' }} por {{ receta.usuario }}</p>
+        </footer>
+
+{% endblock %}

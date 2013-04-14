@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//principal/admin.py=utf-8
+encoding//principal/forms.py=utf-8
+encoding//principal/migrations/0001_initial.py=utf-8
+encoding//principal/migrations/0002_auto__add_field_receta_detalle__add_field_receta_fecha.py=utf-8
+encoding//principal/migrations/0003_auto__add_field_receta_nro.py=utf-8
+encoding//principal/models.py=utf-8
+encoding//recetario/settings.py=utf-8

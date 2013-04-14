@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% comment %} Aqui van comentarios {% endcomment %}
+
+{% block titulo %}Recetas registradas{% endblock %}
+
+{% block encabezado %}
+    <h1>Nuestas Recetas: </h1>
+{% endblock %}
+
+{% block contenido %}
+     <ul>
+        {% for dato in datos %}
+            <li>
+            <a href='{% url principal.views.detalle_receta dato.id %}'> {{ dato.titulo }}</a>
+            <img src='{{ MEDIA_URL }}{{dato.imagen}}'>
+            </li>
+        {% empty %}
+            <li>No hay recetas registradas</li>
+        {% endfor %}
+    </ul>
+    <a href="/receta/nueva">Agregar una receta</a>
+{% endblock %}
+
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+    <meta charset='utf-8'>
+	<title>Recetario - {% block titulo %}{% endblock %}</title>
+	<link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap.min.css" >
+	<link rel="stylesheet" href="/static/css/bootstrap.css" >
+    <link href='{{STATIC_URL}}css/bootstrap-responsive.css' rel='stylesheet'>	
+	
+    <style>
+    	body { padding-top: 60px; }
+        {% block style_css %}{% endblock %}        
+    </style>   
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  	<script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+  	<script src="{{STATIC_URL}}js/tiny_mce/tiny_mce.js"></script>
+  	<script src="{{STATIC_URL}}js/basic_config.js"></script>
+  	
+
+  	</head>
+  <body>  	 	
+  	 	
+  	<header>
+      
+      
+      <div class="navbar navbar-fixed-top">
+		  <div class="navbar-inner">
+		    <div class="container">
+		      <a class="brand active" href="/">Recetario</a>
+		      <ul class="nav">
+		        <li class="active"><a href="/">Home</a></li>
+		        <li><a href="/usuarios">Usuarios Registrados</a></li>
+		        <li><a href="/recetas">Recetas</a></li>
+		        <li><a href="/comenta">Comenta</a></li>
+		        <li><a href="/sobre">Nosotros</a></li>
+		         <li><a href="/contacto">Contacto</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</div>         
+  	  	{% block encabezado %} {% endblock %}	
+  	</header>  	
+  	
+  	
+    <section>    	 	
+        {% block contenido %}{% endblock %}
+    </section>
+    
+    <footer>
+        <p><h1>Proyecto Recetas; 2013</h1></p>     
+  		
+    </footer>
+  </body>
+</html>
+
